@@ -137,3 +137,31 @@ bool check(char *word)
 
     return false;
 }
+
+// Unload trie from memory
+bool unload(void)
+{
+
+    // The recursive function handles all of the freeing
+    unloader(root);
+
+    return true;
+}
+
+void unloader(node *current)
+{
+
+    // Iterate over all the children to see if they point to anything and go
+    // there if they do point
+    for (int i = 0; i < SIZE_OF_ALPHABET; i++)
+    {
+        if (current->children[i] != NULL)
+        {
+            unloader(current->children[i]);
+        }
+    }
+
+    // After we check all the children point to null we can get rid of the node
+    // and return to the previous iteration of this function.
+    free(current);
+}
