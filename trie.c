@@ -105,3 +105,35 @@ int main(int argc, char *argv[])
 
     fclose(infile);
 }
+
+// TODO: Complete the check function, return true if found, false if not found
+// Returns true if word is in dictionary, else returns false
+bool check(char *word)
+{
+    // Start at root of trie
+    node *cursor = root;
+
+    // Iterate through each letter in word
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        // Calculate index for children array
+        int index = tolower(word[i]) - 'a';
+
+        // If child node is NULL, word is not in trie
+        if (cursor->children[index] == NULL)
+        {
+            return false;
+        }
+
+        // Move cursor to child node
+        cursor = cursor->children[index];
+    }
+
+    // If we've reached the end of the word, check if is_word is true
+    if (cursor->is_word)
+    {
+        return true;
+    }
+
+    return false;
+}
