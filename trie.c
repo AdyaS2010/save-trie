@@ -87,3 +87,21 @@ int main(int argc, char *argv[])
         // if we are at the end of the word, mark it as being a word
         cursor->is_word = true;
     }
+
+    if (check(get_string("Check word: ")))
+    {
+        printf("Found!\n");
+    }
+    else
+    {
+        printf("Not Found.\n");
+    }
+
+    if (!unload())
+    {
+        printf("Problem freeing memory!\n");
+        return 1;
+    }
+
+    fclose(infile);
+}
