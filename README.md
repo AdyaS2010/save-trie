@@ -36,6 +36,14 @@ Check word: Bella
 Found!
 ```
 
+![image](https://github.com/user-attachments/assets/6fe98f63-54a9-488b-a6db-5ea372bd643c)
+
+![image](https://github.com/user-attachments/assets/315825ea-649d-4025-bdef-6769eeffa913)
+
+![image](https://github.com/user-attachments/assets/c14f14d6-377c-4837-9f44-7f56b010edc5)
+
+*After reading in an infile (in args/command as the first line in running a program), for example names.txt, a series of words (in a dictionary, txt, file, etc.), in this case, dog names for reference, you will be able to query a certain word and get a response as to whether it is present and found in that file!* 
+
 ## Contributing
 1. Fork the repository.
 2. Create a new branch:
